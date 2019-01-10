@@ -39,15 +39,15 @@ keymap_config_t keymap_config;
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
         KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC, TD(TD_F13_F14), \
-        KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS, HYPR(KC_F14), \
-        KC_CAPS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,          KC_ENT,  HYPR(KC_F15), \
+        KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS, TD(TD_F15_F16), \
+        KC_CAPS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,          KC_ENT,  TD(TD_F17_F18), \
         KC_LSPO, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSPC,          KC_UP,   KC_DEL, \
         KC_LCTL, KC_LALT, KC_LGUI,                            KC_SPC,                             MO(1),   KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT  \
     ),
     [1] = LAYOUT(
-        KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_TRNS, HYPR(KC_F16), \
-        L_T_BR,  L_PSD,   L_BRI,   L_PSI,   KC_TRNS, KC_TRNS, KC_TRNS, U_T_AUTO,U_T_AGCR,KC_TRNS, KC_PSCR, KC_SLCK, KC_PAUS, KC_TRNS, HYPR(KC_F17), \
-        L_T_PTD, L_PTP,   L_BRD,   L_PTN,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS, HYPR(KC_F18), \
+        KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_TRNS, TD(TD_F19_F20), \
+        L_T_BR,  L_PSD,   L_BRI,   L_PSI,   KC_TRNS, KC_TRNS, KC_TRNS, U_T_AUTO,U_T_AGCR,KC_TRNS, KC_PSCR, KC_SLCK, KC_PAUS, KC_TRNS, TD(TD_F21_F22), \
+        L_T_PTD, L_PTP,   L_BRD,   L_PTN,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS, TD(TD_F23_F24), \
         KC_TRNS, L_T_MD,  L_T_ONF, KC_TRNS, KC_TRNS, MD_BOOT, TG_NKRO, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          KC_PGUP, KC_TRNS, \
         KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS,                            KC_TRNS, KC_TRNS, KC_HOME, KC_PGDN, KC_END  \
     ),
@@ -235,7 +235,102 @@ void tap_dance_f13_f14_stop (qk_tap_dance_state_t *state, void *user_data) {
   }
 }
 
+void tap_dance_f15_f16_start (qk_tap_dance_state_t *state, void *user_data) {
+  register_hyper ();
+  if (state->count == 1) {
+    register_code (KC_F15);
+  } else {
+    register_code (KC_F16);
+  }
+}
+
+void tap_dance_f15_f16_stop (qk_tap_dance_state_t *state, void *user_data) {
+  unregister_hyper ();
+  if (state->count == 1) {
+    unregister_code (KC_F15);
+  } else {
+    unregister_code (KC_F16);
+  }
+}
+
+void tap_dance_f17_f18_start (qk_tap_dance_state_t *state, void *user_data) {
+  register_hyper ();
+  if (state->count == 1) {
+    register_code (KC_F17);
+  } else {
+    register_code (KC_F18);
+  }
+}
+
+void tap_dance_f17_f18_stop (qk_tap_dance_state_t *state, void *user_data) {
+  unregister_hyper ();
+  if (state->count == 1) {
+    unregister_code (KC_F17);
+  } else {
+    unregister_code (KC_F18);
+  }
+}
+
+void tap_dance_f19_f20_start (qk_tap_dance_state_t *state, void *user_data) {
+  register_hyper ();
+  if (state->count == 1) {
+    register_code (KC_F19);
+  } else {
+    register_code (KC_F20);
+  }
+}
+
+void tap_dance_f19_f20_stop (qk_tap_dance_state_t *state, void *user_data) {
+  unregister_hyper ();
+  if (state->count == 1) {
+    unregister_code (KC_F19);
+  } else {
+    unregister_code (KC_F20);
+  }
+}
+
+void tap_dance_f21_f22_start (qk_tap_dance_state_t *state, void *user_data) {
+  register_hyper ();
+  if (state->count == 1) {
+    register_code (KC_F21);
+  } else {
+    register_code (KC_F22);
+  }
+}
+
+void tap_dance_f21_f22_stop (qk_tap_dance_state_t *state, void *user_data) {
+  unregister_hyper ();
+  if (state->count == 1) {
+    unregister_code (KC_F21);
+  } else {
+    unregister_code (KC_F22);
+  }
+}
+
+void tap_dance_f23_f24_start (qk_tap_dance_state_t *state, void *user_data) {
+  register_hyper ();
+  if (state->count == 1) {
+    register_code (KC_F23);
+  } else {
+    register_code (KC_F24);
+  }
+}
+
+void tap_dance_f23_f24_stop (qk_tap_dance_state_t *state, void *user_data) {
+  unregister_hyper ();
+  if (state->count == 1) {
+    unregister_code (KC_F23);
+  } else {
+    unregister_code (KC_F24);
+  }
+}
+
 //All tap dance functions would go here. Only showing this one.
 qk_tap_dance_action_t tap_dance_actions[] = {
- [TD_F13_F14] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, tap_dance_f13_f14_start, tap_dance_f13_f14_stop)
+ [TD_F13_F14] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, tap_dance_f13_f14_start, tap_dance_f13_f14_stop),
+ [TD_F15_F16] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, tap_dance_f15_f16_start, tap_dance_f15_f16_stop),
+ [TD_F17_F18] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, tap_dance_f17_f18_start, tap_dance_f17_f18_stop),
+ [TD_F19_F20] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, tap_dance_f19_f20_start, tap_dance_f19_f20_stop),
+ [TD_F21_F22] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, tap_dance_f21_f22_start, tap_dance_f21_f22_stop),
+ [TD_F23_F24] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, tap_dance_f23_f24_start, tap_dance_f23_f24_stop)
 };

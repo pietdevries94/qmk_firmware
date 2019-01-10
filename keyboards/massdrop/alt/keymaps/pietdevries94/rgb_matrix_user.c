@@ -16,12 +16,12 @@ static uint8_t led_cur_index;
 #define LED_BOOST_PROPAGATE 0.5
 #define LED_BOOST_PEAK 100
 
-#define MIN_RGB 0x332e00
+#define MIN_RGB 0x3d2e00
 #define MIN_R (MIN_RGB >> 16 & 0xff)
 #define MIN_G (MIN_RGB >> 8 & 0xff)
 #define MIN_B (MIN_RGB & 0xff)
 
-#define MAX_RGB 0xfff268
+#define MAX_RGB 0xffe56b
 #define MAX_R (MAX_RGB >> 16 & 0xff)
 #define MAX_G (MAX_RGB >> 8 & 0xff)
 #define MAX_B (MAX_RGB & 0xff)
