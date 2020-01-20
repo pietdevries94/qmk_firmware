@@ -33,3 +33,4 @@ VIRTSER_ENABLE = no         # USB Serial Driver
 RAW_ENABLE = no             # Raw device
 AUTO_SHIFT_ENABLE = no      # Auto Shift
 TAP_DANCE_ENABLE = yes
+TAPPING_TERM = 200
