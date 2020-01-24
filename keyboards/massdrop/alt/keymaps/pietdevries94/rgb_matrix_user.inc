@@ -18,7 +18,7 @@ static bool my_cool_effect(effect_params_t* params) {
       rgb_matrix_set_color(i, 0x99, 0xff, 0x00);
     } else {
       // keys
-      rgb_matrix_set_color(i, 0xff, 0xc0, 0x00);
+      rgb_matrix_set_color(i, 0xff, 0xc9, 0x00);
     }
   }
   return led_max < DRIVER_LED_TOTAL;
